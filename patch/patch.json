@@ -1,0 +1,67 @@
+[
+    {
+        "channel_map": [
+            1, 
+            2, 
+            3, 
+            4
+        ], 
+        "fixture_id": 1, 
+        "fixture_type": 1, 
+        "label": "Name", 
+        "num_channels": 3, 
+        "start_address": 1
+    }, 
+    {
+        "channel_map": [
+            1, 
+            2, 
+            3, 
+            4
+        ], 
+        "fixture_id": 2, 
+        "fixture_type": 1, 
+        "label": "Name2", 
+        "num_channels": 3, 
+        "start_address": 4
+    }, 
+    {
+        "channel_map": [
+            1, 
+            2, 
+            3, 
+            4
+        ], 
+        "fixture_id": 3, 
+        "fixture_type": 1, 
+        "label": "Name", 
+        "num_channels": 3, 
+        "start_address": 7
+    }, 
+    {
+        "channel_map": [
+            1, 
+            2, 
+            3, 
+            4
+        ], 
+        "fixture_id": 4, 
+        "fixture_type": 1, 
+        "label": "Name", 
+        "num_channels": 3, 
+        "start_address": 10
+    }, 
+    {
+        "channel_map": [
+            1, 
+            2, 
+            3, 
+            4
+        ], 
+        "fixture_id": 5, 
+        "fixture_type": 1, 
+        "label": "Name", 
+        "num_channels": 3, 
+        "start_address": 13
+    }
+]
