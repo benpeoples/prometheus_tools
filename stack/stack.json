@@ -1,229 +1,229 @@
 {
-  "version" : 1,
-  "cuestacks" : [
-  {
-    "cuestack_id" : 1,
-    "label" : "Hello Cue",
-    "loop" : true,
-    "cuesteps" : [
-      {
-        "wait" : 1000,
-        "fixtures" : [
+    "cuestacks": [
         {
-          "fixture_id" : 1,
-          "color" : {
-            "red" : 255,
-            "green" : 0,
-            "blue" : 0,
-            "intensity" : 65535
-          },
-          "fade" : 1000
-        },
-        {
-          "fixture_id" : 2,
-          "color" : {
-            "red" : 255,
-            "green" : 0,
-            "blue" : 0,
-            "intensity" : 65535
-          },
-          "fade" : 1000
-        },
-        {
-          "fixture_id" : 3,
-          "color" : {
-            "red" : 255,
-            "green" : 0,
-            "blue" : 0,
-            "intensity" : 65535
-          },
-          "fade" : 1000
-        }
-        ]
-      },
-      {
-        "wait" : 1000,
-        "fixtures" : [
-        {
-          "fixture_id" : 1,
-          "color" : {
-            "red" : 0,
-            "green" : 255,
-            "blue" : 0,
-            "intensity" : 65535
-          },
-          "fade" : 1000
-        },
-        {
-          "fixture_id" : 2,
-          "color" : {
-            "red" : 0,
-            "green" : 255,
-            "blue" : 0,
-            "intensity" : 65535
-          },
-          "fade" : 1000
-        },
-        {
-          "fixture_id" : 3,
-          "color" : {
-            "red" : 0,
-            "green" : 255,
-            "blue" : 0,
-            "intensity" : 65535
-          },
-          "fade" : 1000
-        }
-      ]},
-
-        {
-          "wait" : 1000,
-          "fixtures" : [
-          {
-            "fixture_id" : 1,
-            "color" : {
-              "red" : 0,
-              "green" : 0,
-              "blue" : 255,
-              "intensity" : 65535
-            },
-            "fade" : 1000
-          },
-          {
-            "fixture_id" : 2,
-            "color" : {
-              "red" : 0,
-              "green" : 0,
-              "blue" : 255,
-              "intensity" : 65535
-            },
-            "fade" : 1000
-          },
-          {
-            "fixture_id" : 3,
-            "color" : {
-              "red" : 0,
-              "green" : 0,
-              "blue" : 255,
-              "intensity" : 65535
-            },
-            "fade" : 1000
-          }
-          ]
-        }
-        ]
-      },
-      {
-        "cuestack_id" : 2,
-        "label" : "Goodbye Cue",
-        "loop" : false,
-        "cuesteps" : [
-          {
-            "wait" : 1000,
-            "fixtures" : [
-            {
-              "fixture_id" : 1,
-              "color" : {
-                "red" : 255,
-                "green" : 0,
-                "blue" : 0,
-                "intensity" : 65535
-              },
-              "fade" : 1000
-            },
-            {
-              "fixture_id" : 2,
-              "color" : {
-                "red" : 255,
-                "green" : 0,
-                "blue" : 0,
-                "intensity" : 65535
-              },
-              "fade" : 1000
-            },
-            {
-              "fixture_id" : 3,
-              "color" : {
-                "red" : 255,
-                "green" : 0,
-                "blue" : 0,
-                "intensity" : 65535
-              },
-              "fade" : 1000
-            }
-            ]
-          },
-          {
-            "wait" : 1000,
-            "fixtures" : [
-            {
-              "fixture_id" : 1,
-              "color" : {
-                "red" : 0,
-                "green" : 255,
-                "blue" : 0,
-                "intensity" : 65535
-              },
-              "fade" : 1000
-            },
-            {
-              "fixture_id" : 2,
-              "color" : {
-                "red" : 0,
-                "green" : 255,
-                "blue" : 0,
-                "intensity" : 65535
-              },
-              "fade" : 1000
-            },
-            {
-              "fixture_id" : 3,
-              "color" : {
-                "red" : 0,
-                "green" : 255,
-                "blue" : 0,
-                "intensity" : 65535
-              },
-              "fade" : 1000
-            }
-          ]},
-
-            {
-              "wait" : 1000,
-              "fixtures" : [
-              {
-                "fixture_id" : 1,
-                "color" : {
-                  "red" : 0,
-                  "green" : 0,
-                  "blue" : 255,
-                  "intensity" : 65535
+            "cuestack_id": 1,
+            "cuesteps": [
+                {
+                    "fixtures": [
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 255
+                            },
+                            "fade": 1000,
+                            "fixture_id": 1
+                        },
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 255
+                            },
+                            "fade": 1000,
+                            "fixture_id": 2
+                        },
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 255
+                            },
+                            "fade": 1000,
+                            "fixture_id": 3
+                        }
+                    ],
+                    "wait": 1000
                 },
-                "fade" : 1000
-              },
-              {
-                "fixture_id" : 2,
-                "color" : {
-                  "red" : 0,
-                  "green" : 0,
-                  "blue" : 255,
-                  "intensity" : 65535
+                {
+                    "fixtures": [
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 255,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 1
+                        },
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 255,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 2
+                        },
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 255,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 3
+                        }
+                    ],
+                    "wait": 1000
                 },
-                "fade" : 1000
-              },
-              {
-                "fixture_id" : 3,
-                "color" : {
-                  "red" : 0,
-                  "green" : 0,
-                  "blue" : 255,
-                  "intensity" : 65535
+                {
+                    "fixtures": [
+                        {
+                            "color": {
+                                "blue": 255,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 1
+                        },
+                        {
+                            "color": {
+                                "blue": 255,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 2
+                        },
+                        {
+                            "color": {
+                                "blue": 255,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 3
+                        }
+                    ],
+                    "wait": 1000
+                }
+            ],
+            "label": "Hello Cue",
+            "loop": true
+        },
+        {
+            "cuestack_id": 2,
+            "cuesteps": [
+                {
+                    "fixtures": [
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 255
+                            },
+                            "fade": 1000,
+                            "fixture_id": 1
+                        },
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 255
+                            },
+                            "fade": 1000,
+                            "fixture_id": 2
+                        },
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 255
+                            },
+                            "fade": 1000,
+                            "fixture_id": 3
+                        }
+                    ],
+                    "wait": 1000
                 },
-                "fade" : 1000
-              }
-              ]
-            }
-            ]
-          }
-    ]
-  }
+                {
+                    "fixtures": [
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 255,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 1
+                        },
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 255,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 2
+                        },
+                        {
+                            "color": {
+                                "blue": 0,
+                                "green": 255,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 3
+                        }
+                    ],
+                    "wait": 1000
+                },
+                {
+                    "fixtures": [
+                        {
+                            "color": {
+                                "blue": 255,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 1
+                        },
+                        {
+                            "color": {
+                                "blue": 255,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 2
+                        },
+                        {
+                            "color": {
+                                "blue": 255,
+                                "green": 0,
+                                "intensity": 65535,
+                                "red": 0
+                            },
+                            "fade": 1000,
+                            "fixture_id": 3
+                        }
+                    ],
+                    "wait": 1000
+                }
+            ],
+            "label": "Goodbye Cue",
+            "loop": false
+        }
+    ],
+    "version": 1
+}

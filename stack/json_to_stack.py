@@ -44,53 +44,15 @@ print "Building File!"
 
 f = open(sys.argv[2],"wb")
 
-f.write(bytearray(b'\x04\x4E\x01\x00')); # Header
+f.write(bytearray(b'\x04\x4E\x01')); # Header
+
+f.write(struct.pack("!B",data['version']))
 
 f.write(struct.pack("!H",stack_count)) # Stack count
 
-# Next !H is the length of the next cuestack, which we need to go generate first.
+# Next !H is the length the cuestack, which we need to go generate first.
 
-"""
-cuestack = stack_pb2.CueStack()
-cuestack.cuestack_id = 1
-cuestack.label = "Hello"
-serialized = cuestack.SerializeToString()
-length = len(serialized)
-f.write(struct.pack("!B",length))  # Write the length of this bit
-f.write(serialized) # then the data
-stack_length += 1 + length
-this_cuestack += 1 + length  # track the total length of the cuestack
-if(stack_length > 450560):
-    raise ValueError('Cuestack File Overflow')
-
-f.write(struct.pack('!I',2000))   # Delay in cuestep
-f.write(struct.pack('!H',150))  # number of fixtures in cuestep
-
-stack_length += 6
-this_cuestack += 6
-
-for x in range(150):
-    cuefix = stack_pb2.CueFix()
-    cuefix.fixture_id = x*2
-    cuefix.fade = 1000
-    cuefix.color.intensity = 65535
-    cuefix.color.red = 255
-    cuefix.color.green = 0
-    cuefix.color.blue = 0
-
-    cuefix_string = cuefix.SerializeToString()
-    cuefix_length = len(cuefix_string) # Max 56
-
-    f.write(struct.pack("!B",cuefix_length))
-    f.write(cuefix_string)
-
-    stack_length += 1 + cuefix_length
-    this_cuestack += 1 + cuefix_length
-    if(stack_length > 450560):
-        raise ValueError('Cuestack File Overflow')
-"""
-
-stackstring = ""
+#stackstring = ""
 
 for cue in data['cuestacks']:
     cuestring = ""
@@ -141,11 +103,11 @@ for cue in data['cuestacks']:
             cuestring += cuefix_string
 
     length = len(cuestring)
-    stackstring += struct.pack('!H',length)
-    stackstring += cuestring
+    f.write(struct.pack('!H',length))
+    f.write(cuestring)
 
-f.write(struct.pack('!I',len(stackstring)))
-f.write(stackstring)
+#f.write(struct.pack('!I',len(stackstring)))
+#f.write(stackstring)
 
 
 print "Done!"
