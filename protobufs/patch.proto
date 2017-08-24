@@ -1,0 +1,36 @@
+syntax = "proto2";
+import "nanopb.proto";
+
+message fixture {
+  required uint32 fixture_id = 1;
+  optional string label = 2 [(nanopb).max_size = 20];
+  required uint32 fixture_type = 3;
+  required uint32 start_address = 4;
+  optional bool intensity = 10;
+  optional bool rgb = 11;
+  optional bool vw = 12;
+  optional uint32 num_channels = 20;
+  optional bytes channel_map = 21 [(nanopb).max_size = 32];
+  optional uint32 vw_cool = 30;
+  optional uint32 vw_warm = 31;
+}
+
+// Channel map values:
+// 0x00 : Not used
+// 0x01 : Intensity
+// 0x02 : Red
+// 0x03 : Green
+// 0x04 : Blue
+// 0x05 : White
+// 0x06 : Cool White
+// 0x07 : Warm White
+
+
+
+// File Format:
+// 0x04 0x4E -- Magic Number meaning Prometheus File
+// 0x02 -- Patch File
+// 0x00 -- Version
+// 0xXX 0xXX - Fixture count
+// 0xXX - bytes / Fixture
+// Fixture, etc.

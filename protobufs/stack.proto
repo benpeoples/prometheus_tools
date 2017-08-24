@@ -1,0 +1,47 @@
+import "nanopb.proto";
+
+message CueStack {
+  required uint32 cuestack_id = 1; // ID number for tracking
+  optional string label = 2 [(nanopb).max_size = 40]; // In system label
+  optional bool loop = 3;
+}
+
+
+
+message ColorSpec {
+  optional uint32 red = 1;
+  optional uint32 blue = 2;
+  optional uint32 green = 3;
+  optional uint32 white = 4;
+  optional uint32 cool = 5;
+  optional uint32 warm = 6;
+//  optional uint32 x = 7;
+//  optional uint32 y = 8;
+//  optional uint32 z = 9;
+  optional uint32 intensity = 10;
+}
+
+message CueFix {
+  required uint32 fixture_id = 1;
+  required ColorSpec color = 2;
+  required uint32 fade = 3;
+}
+
+// File format:
+
+// 0x04 0x4E - Magic number indicates this is a Prometheus File
+// 0x01 - Cue File
+// 0x00 - Version number
+// 0xXX XX - Number of Cuestacks
+// [start cuestack]
+// 0xXX XX - CueStack bytes
+// -- Cue Stack Protobuf Message --
+// [start cuestep]
+// 0xXX XX XX XX - Wait Time after executing cue (milliseconds)
+// 0xXX XX - fixture counts
+// [start_fix]
+// 0xXX - Bytelength of array
+// -- CueFix array --
+// [end_fix]
+// [end cuestep]
+// [end cuestack]

@@ -1,0 +1,37 @@
+syntax = "proto2";
+import "nanopb.proto";
+
+message pmproto {
+  enum Message_type {
+  PING = 0; // Request a pong
+  PONG = 1; // Sending a pong
+  VERSION = 2; // Request/respond with a version
+
+  ACK = 3; // Send an ACK
+
+  PATCH = 10; // Message contains a patch file
+  STACK = 11; // Message contains a cue stack
+  CONFIG = 12; // Message contains a config file
+  TRIGGER = 13; // Message contains a trigger file
+
+  FIXTURE = 20; // Message contains a set message for some fixtures
+
+  LOAD = 30; // Load a cue
+  GO = 31; // Go on cuestacks
+
+  }
+  required Message_type type = 1;
+
+  optional uint32 seq = 2;
+
+  optional bytes file = 3;
+  optional string version = 4;
+
+  optional uint32 fixture_id = 20;
+  optional fixed32 colorspec = 21;
+  optional uint32 intensity = 22;
+
+  optional fixed32 cuestack = 30;
+  optional bool go = 31;
+
+}
