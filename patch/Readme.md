@@ -49,3 +49,11 @@ Will create or overwrite `patch.bin` with a new patch file.  Will spit out error
     patch_to_json.py patch.bin patch.json
 
 Will create or overwrite `patch.json` with a new json patch.   Will spit out errors if `patch.bin` is not formatted like a patch file.  
+
+# patch_upload.py
+
+    patch_upload.py ip_address patch.bin
+
+Patch upload is pretty dumb at the moment, and is just streamed over TCP.   We will be adding a checksum function soonish.  
+
+Process is pretty simple, connect to TCP port 1234 send the four byte password followed by `0x01` for a patch file.   The just stream the file.   Before the file we're going to add an md5 checksum, but currently not there.
