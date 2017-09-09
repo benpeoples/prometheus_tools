@@ -1,0 +1,125 @@
+import "nanopb.proto";
+
+/*
+Start Date - month | day
+End Date - month | day
+
+- Day of week mask: 0SFRWTMS
+
+- Start ENUM:
+
+0 = TIME
+1 = SUNRISE
+2 = SUNSET
+3 = NOON
+4 = MIDNIGHT
+5 = RANDOM
+
+- Start Hour (or offset) - seconds (since midnight)
+- End ENUM:
+
+0 = TIME
+1 = SUNRISE
+2 = SUNSET
+3 = NOON
+4 = MIDNIGHT
+5 = RANDOM
+
+- End Hour (or offset) - seconds (since midnight)
+
+Random will pick a random start time < end time.
+
+Not specifying a start or end date will wildcard match.
+Not specifying a start or end time or type will wildcard match all.
+
+Priority is a 32-bit unsigned int, higher priority triggers will suppress lower priority triggers.  I think this means you set your "everyday" priority, then set holidays at higher priorities.
+
+*/
+
+message TimeTrigger {
+  required uint32 trigger_id = 1;
+  optional fixed32 start_date = 2;
+  optional fixed32 end_date = 3;
+  optional int32 day_of_week = 4;
+  enum time_type {
+    TIME = 0;
+    SUNRISE = 1;
+    SUNSET = 2;
+    NOON = 3;
+    MIDNIGHT = 4;
+    RANDOM = 5;
+  }
+  optional time_type start_type = 5;
+  optional int32 start = 6;
+  optional time_type end_type = 7;
+  optional int32 end = 8;
+
+  optional uint32 priority = 10;
+
+  optional string action = 20 [(nanopb).max_size = 60];
+
+}
+
+/*
+Actions:
+
+- Send OSC message (o)
+- Send UDP message (u)
+- Cuestack action (c)
+- triggers (t)
+
+Action format:
+
+<message type><params><content>
+
+OSC/UDP message parameters:
+|ip_address|port|
+
+u|192.168.1.1|9000|23|themessagegoeshereuntilNULL
+
+o|192.168.1.1|54000|13|rawoscmessage
+
+Cuestack action:
+
+‘c’ -- clear
+‘l’ -- load
+‘t’ -- load and go
+‘g’ -- go
+‘x’ -- stop
+
+c|id|action|milliseconds|fader|
+
+can repeat cuestacks:
+c|id|action|milliseconds|fader|id|action|milliseconds|fader|
+
+So:
+
+c|1|t|0|1|
+
+Load-and-go cuestack 1 on fader 1
+
+or
+
+c|1|t|0|1|2|t|1500|2|
+
+Load-and-go cuestack 1 on fader 1, cuestack 2 on fader 2 with a 1500ms delay
+
+Like with the lan protocol, cuestack 0 means go black
+
+Triggers:
+
+t|id|milliseconds|
+
+Can repeat triggers:
+
+t|id|milliseconds|id|milliseconds|
+
+so:
+
+t|1|0|2|50000|
+
+Trigger 1 with 0 milliseconds delay, then 50 seconds later trigger 2
+
+-> You cannot trigger yourself with < 1 second delay
+
+*/
