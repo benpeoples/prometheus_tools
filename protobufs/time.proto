@@ -24,6 +24,7 @@ End Date - month | day
 3 = NOON
 4 = MIDNIGHT
 5 = RANDOM
+6 = MANUAL
 
 - End Hour (or offset) - seconds (since midnight)
 
@@ -48,6 +49,7 @@ message TimeTrigger {
     NOON = 3;
     MIDNIGHT = 4;
     RANDOM = 5;
+    MANUAL = 6;
   }
   optional time_type start_type = 5;
   optional int32 start = 6;
@@ -56,7 +58,7 @@ message TimeTrigger {
 
   optional uint32 priority = 10;
 
-  optional string action = 20 [(nanopb).max_size = 60];
+  optional string action = 20 [(nanopb).max_size = 120];
 
 }
 
